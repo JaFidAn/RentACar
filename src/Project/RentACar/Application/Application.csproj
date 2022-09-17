@@ -3,6 +3,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\CorePersistence\CorePersistence.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\..\..\Core\CoreCrossCuttingConcers\CoreCrossCuttingConcers.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
   </ItemGroup>
 
   <PropertyGroup>
