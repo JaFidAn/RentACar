@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using Application.Features.Brands.Rules;
+using FluentValidation;
+using CoreApplication.Pipelines.Validation;
 
 namespace Application
 {
@@ -17,6 +19,9 @@ namespace Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddScoped<BrandBusinessRules>();
+
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
             return services;
         }
